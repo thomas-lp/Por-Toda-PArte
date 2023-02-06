@@ -10,6 +10,7 @@ atividades que os administradores são responsáveis. Um administrador é chamad
 grupo de “adm” dentro do grupo, e um desenhista comum, que não tem é adm, é chamado
 de “membro”
 
+
 # Técnologias Utlizadas
 
 > HTML 5
