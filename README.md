@@ -1,6 +1,9 @@
-: ![Logo] Docs/Imagens/Logo.png :
-: ## Por Toda PArte :
+<p align="center">
+    <img src="https://raw.githubusercontent.com/thomas-lp/Por-Toda-PArte/main/Docs/Imagens/Logo.png?token=GHSAT0AAAAAAB4CSWFI5PBSVALVS5ZJZOO2Y7XQYVA" alt="Logo" width="300" height="300">
+</p>
 
+<h1 align="center"> Por Toda PArte </h1>
+   
 # Membros do Grupo
 
 - Larissa Reis Silva (202110171)
