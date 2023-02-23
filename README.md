@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/thomas-lp/Por-Toda-PArte/main/Docs/Imagens/Logo.png?token=GHSAT0AAAAAAB4CSWFI5PBSVALVS5ZJZOO2Y7XQYVA" alt="Logo" width="300" height="300">
+    <img src="https://raw.githubusercontent.com/thomas-lp/Por-Toda-PArte/main/Docs/Imagens/Logo.png?token=GHSAT0AAAAAAB4CSWFI3WXZNR7RYEJRVVQ4Y7XRFMA" alt="Logo" width="300" height="300">
 </p>
 
 <h1 align="center"> Por Toda PArte </h1>
