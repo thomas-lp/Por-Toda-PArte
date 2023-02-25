@@ -1,7 +1,7 @@
 .background {
-      background-image: url("../imagens/Fundo1.gif");
+      background-image: url("../imagens/fundo.gif");
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
-}
+  }
