@@ -8,7 +8,7 @@
 
 - Larissa Reis Silva (202110171)
 - Maria Eduarda Couto Grossi (202110158)
-- Thomas Anderson Lopes (202110172
+- Thomas Anderson Lopes (202110172)
 
 # Sobre o Projeto
 
@@ -28,17 +28,19 @@ O projeto trata-se de um site para o grupo de desenhistas do whatsapp Por Toda P
 
 # Estrutura do Diretório
 
-- Por Toda PArte
-    - Docs
-        - Imagens
-        - Diagramas
-        - Padrões Adotados
-        - Requisitos
+- Por-Toda-PArte
+    - docs
+        - diagramas
+        - imagens
+        - padroes-adotados
+        - requisitos
         
-    - Sistema
-        - Código
-            - Controladores
-            - Persistência
-            - Rotas
-            - Serviços
-        - Imagens
+    - sistema
+        - codigo
+            - controladores
+            - cersistência
+            - rotas
+            - serviços
+        - css
+        - html
+        - imagens
