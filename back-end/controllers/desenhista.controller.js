@@ -1,9 +1,3 @@
-/*camada de controle - recebe dados, faz validação, chama serviços e retorna resposta
-  sendo assim, aqui ficam somente funções que recebem dados e/ou precisam fazer validação de dados inseridos
-  as demais são apenas chamadas da camada de serviços e a partir delas são retornadas as resposatas
-  
-  para cada endpoint temos 2 pacotes: req(requisition) e res(response)
-*/
 import desenhistaService from "../services/desenhista.service.js";
 async function getAllDesenhistas(req, res){
     res.send(await desenhistaService.getAllDesenhistas())
@@ -23,15 +17,16 @@ async function getDesenhista(req, res){
 
 async function createDesenhista(req, res){
     //campos requeridos para o cadastro do desenhista
-    const assinatura = req.body.assinatura;
-    const nome = req.body.nome;
-    const redesocial = req.body.redesocial;
+    const assinatura = req.body.assinatura
+    const nome = req.body.nome
+    const redesocial = req.body.redesocial
+    const senha = parseInt(req.body.senha)
 
-    if(!assinatura){ //assinatura vazio
+    if(!assinatura || !senha){ //assinatura vazio
         res.send("Assinatura inválida!!!") //validação de dados
     }
     else{
-        res.send(await desenhistaService.createDesenhista(assinatura, nome, redesocial))
+        res.send(await desenhistaService.createDesenhista(assinatura, nome, redesocial, senha))
     }
 }
 
@@ -61,5 +56,19 @@ async function updateDesenhista(req, res){
     }
 }
 
-export default{getAllDesenhistas, getDesenhista, deleteDesenhista, createDesenhista, updateDesenhista} 
+async function loginDesenhista(req, res){
+
+    const assinatura = req.body.assinatura;
+    const senha = req.body.senha;
+
+    if(!assinatura || !senha){ //assinatura vazio
+        res.send("Assinatura ou senha inválida!!!") //validação de dados
+    }
+    else{
+        res.send(await desenhistaService.loginDesenhista(assinatura, senha))
+    }
+}
+
+
+export default{getAllDesenhistas, getDesenhista, deleteDesenhista, createDesenhista, updateDesenhista, loginDesenhista} 
 //nesse caso tem-se que especificar quais serviços serão exportados

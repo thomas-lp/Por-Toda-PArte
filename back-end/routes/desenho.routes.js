@@ -5,11 +5,11 @@ import desenhoController from "../controllers/desenho.controller.js" //.. signif
 const router = express.Router();
 
 //CRUD DESENHO - rotas presentes no sistema 
-router.get("/", desenhoController.getAllDesenhos) 
-router.get("/:iddesenho", desenhoController.getDesenho)
+router.get("/:desenhistaresp", desenhoController.getAllDesenhos) 
+router.get("/:desenhistaresp/:iddesenho", desenhoController.getDesenho)
 router.post("/", desenhoController.createDesenho)
-router.delete("/:iddesenho", desenhoController.deleteDesenho)
-router.put("/:iddesenho", desenhoController.updateDesenho)
+router.delete("/:desenhistaresp/:iddesenho", desenhoController.deleteDesenho)
+router.put("/:desenhistaresp/:iddesenho", desenhoController.updateDesenho)
 
 
 export default router //exporta as rotas para que outros arquivos possam utilizá-las

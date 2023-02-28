@@ -10,6 +10,7 @@ router.get("/:assinatura", desenhistaController.getDesenhista)
 router.post("/", desenhistaController.createDesenhista)
 router.delete("/:assinatura", desenhistaController.deleteDesenhista)
 router.put("/:assinatura", desenhistaController.updateDesenhista)
+router.post("/login/", desenhistaController.loginDesenhista)
 
 
 export default router //exporta as rotas para que outros arquivos possam utilizá-las

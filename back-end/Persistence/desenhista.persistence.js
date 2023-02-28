@@ -37,14 +37,14 @@ async function getDesenhista(assinatura){
     }
 }
 
-async function createDesenhista(assinatura, nome, redesocial){
+async function createDesenhista(assinatura, nome, redesocial, senha){
 
     const conn = await BD.conectar(); 
 
     try{
         const consulta = 
-        await conn.query("INSERT INTO desenhista (assinatura, nome, redesocial) VALUES ($1, $2, $3) returning *", 
-        [assinatura, nome, redesocial]) 
+        await conn.query("INSERT INTO desenhista (assinatura, nome, redesocial, senha) VALUES ($1, $2, $3, $4) returning *", 
+        [assinatura, nome, redesocial, senha]) 
         console.log("Inserindo...  /n" + consulta.rows)
         return consulta.rows
     }
@@ -90,4 +90,22 @@ async function updateDesenhista(nome, redesocial, assinatura){
     }
 }
 
-export default{getAllDesenhistas, getDesenhista, deleteDesenhista, createDesenhista, updateDesenhista} 
+async function loginDesenhista(assinatura, senha){
+
+    const conn = await BD.conectar(); 
+
+    try{
+        const consulta = 
+        await conn.query("SELECT * FROM desenhista WHERE assinatura = $1 AND senha = $2", [assinatura, senha]) 
+        console.log("Carregando...  /n" + consulta.rows)
+        return consulta.rows 
+    }
+    catch(err){
+        console.log(err);
+    }
+    finally{
+        conn.release(); 
+    }
+}
+
+export default{getAllDesenhistas, getDesenhista, deleteDesenhista, createDesenhista, updateDesenhista, loginDesenhista} 

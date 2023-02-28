@@ -13,11 +13,11 @@ async function getDesenhista(assinatura){
     return await desenhistaPersistence.getDesenhista(assinatura)
 }
 
-async function createDesenhista(assinatura, nome, redesocial){
+async function createDesenhista(assinatura, nome, redesocial, senha){
     const desenhista = await getDesenhista(assinatura) //confere se já existe aquele assinatura na bd
 
     if(desenhista.length == 0){ //desenhista não existe, posso criar 
-        return await desenhistaPersistence.createDesenhista(assinatura, nome, redesocial)
+        return await desenhistaPersistence.createDesenhista(assinatura, nome, redesocial, senha)
     }
     else{
         return "Assinatura já cadastrada."
@@ -48,5 +48,16 @@ async function updateDesenhista(nome, redesocial, assinatura){
     }
 }
 
-export default{getAllDesenhistas, getDesenhista, deleteDesenhista, createDesenhista, updateDesenhista} 
+async function loginDesenhista(assinatura, senha){
+
+    const desenhista = await getDesenhista(assinatura)
+
+    if(desenhista.length > 0){ 
+        return await desenhistaPersistence.loginDesenhista(assinatura, senha)
+    }
+    else{
+        return "Desenhista não cadastrado."
+    }
+}
+export default{getAllDesenhistas, getDesenhista, deleteDesenhista, createDesenhista, updateDesenhista, loginDesenhista} 
 //nesse caso tem-se que especificar quais serviços serão exportados
