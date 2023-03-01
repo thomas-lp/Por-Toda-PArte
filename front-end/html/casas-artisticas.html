@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por Toda PArte</title>
+
+    <link rel="stylesheet" href="../icons-font-awesome/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="../css/background.css">
+    <link rel="stylesheet" href="../css/esqueleto.css">
+    <link rel="stylesheet" href="../css/casas-artisticas.css">
+
+    <script src="../java-script/casas-artisticas.js"></script>
+</head>
+
+<body class="background">
+    <div class="container">
+        <div class="sidebar">
+            <div class="user-menu">
+                <div class="user-profile">
+                <img src="https://via.placeholder.com/80x80" alt="Foto do usuário" />
+                </div>
+                <ul class="menu">
+                <li><a href="meu-perfil.html"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
+                <li><a href="minha-galeria.html"><i class="fa-solid fa-image"></i> Galeria</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="top-menu">
+                <div class="logo">
+                <h1><i class="fa-solid fa-palette"></i> Por Toda Parte</h1>
+                </div>
+                <ul class="menu">
+                    <li><a href="inicio.html"><i class="fa-solid fa-paintbrush"></i> Início</a></li>
+                    <li><a href="eventos.html"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
+                    <li><a href="casas-artisticas.html"><i class="fa-solid fa-house-flag"></i> Casas Artísticas</a></li>
+                    <li><a href="comunidade.html"><i class="fa-solid fa-paint-roller"></i> Comunidade</a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 3</div>
+                      <img src="https://picsum.photos/id/238/200/200" style="width:100%">
+                      <div class="text">Caption Text</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 3</div>
+                      <img src="https://picsum.photos/id/239/200/200" style="width:100%">
+                      <div class="text">Caption Two</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 3</div>
+                      <img src="https://picsum.photos/id/240/200/200" style="width:100%">
+                      <div class="text">Caption Three</div>
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    
+                    </div>
+                    <br>
+                    
+                    <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span> 
+                      <span class="dot" onclick="currentSlide(2)"></span> 
+                      <span class="dot" onclick="currentSlide(3)"></span> 
+                    </div>                          
+            </div>
+            <div class="footer">
+                <p>&copy; 2023 - Por Toda PArte</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+  
