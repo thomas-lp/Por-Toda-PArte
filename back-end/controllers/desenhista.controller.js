@@ -21,12 +21,13 @@ async function createDesenhista(req, res){
     const nome = req.body.nome
     const redesocial = req.body.redesocial
     const senha = parseInt(req.body.senha)
+    const casa = req.body.casa
 
-    if(!assinatura || !senha){ //assinatura vazio
-        res.send("Assinatura inválida!!!") //validação de dados
+    if(!assinatura || !senha || !casa){ //assinatura vazio
+        res.send("Assinatura, senha ou casa artística inválida!!!") //validação de dados
     }
     else{
-        res.send(await desenhistaService.createDesenhista(assinatura, nome, redesocial, senha))
+        res.send(await desenhistaService.createDesenhista(assinatura, nome, redesocial, senha, casa))
     }
 }
 

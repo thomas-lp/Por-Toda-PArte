@@ -4,6 +4,8 @@
 //para cada endpoint temos 2 pacotes: req(requisition) e res(response)
 
 import desenhistaPersistence from "../Persistence/desenhista.persistence.js";
+import casas from "../Persistence/casaArtistica.persistence.js";
+
 async function getAllDesenhistas(){
     return await desenhistaPersistence.getAllDesenhistas()
     //função precisa ser chamada com await, pois é async, é necessário esperar a resposta dela para seguir
@@ -13,14 +15,15 @@ async function getDesenhista(assinatura){
     return await desenhistaPersistence.getDesenhista(assinatura)
 }
 
-async function createDesenhista(assinatura, nome, redesocial, senha){
+async function createDesenhista(assinatura, nome, redesocial, senha, casa){
     const desenhista = await getDesenhista(assinatura) //confere se já existe aquele assinatura na bd
+    const casasExistentes = await casas.getCasa(casa)
 
-    if(desenhista.length == 0){ //desenhista não existe, posso criar 
-        return await desenhistaPersistence.createDesenhista(assinatura, nome, redesocial, senha)
+    if(desenhista.length == 0 && casasExistentes.length != 0){ //desenhista não existe, posso criar 
+        return await desenhistaPersistence.createDesenhista(assinatura, nome, redesocial, senha, casa)
     }
     else{
-        return "Assinatura já cadastrada."
+        return "Assinatura já cadastrada ou Casa Artística não existente."
     }
 }
 

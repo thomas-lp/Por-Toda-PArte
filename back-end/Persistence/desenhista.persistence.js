@@ -37,14 +37,14 @@ async function getDesenhista(assinatura){
     }
 }
 
-async function createDesenhista(assinatura, nome, redesocial, senha){
+async function createDesenhista(assinatura, nome, redesocial, senha, casa){
 
     const conn = await BD.conectar(); 
 
     try{
         const consulta = 
-        await conn.query("INSERT INTO desenhista (assinatura, nome, redesocial, senha) VALUES ($1, $2, $3, $4) returning *", 
-        [assinatura, nome, redesocial, senha]) 
+        await conn.query("INSERT INTO desenhista (assinatura, nome, redesocial, senha, casa) VALUES ($1, $2, $3, $4, $5) returning *", 
+        [assinatura, nome, redesocial, senha, casa]) 
         console.log("Inserindo...  /n" + consulta.rows)
         return consulta.rows
     }
