@@ -15,12 +15,12 @@
 O projeto trata-se de um site para o grupo de desenhistas do whatsapp Por Toda PArte, existente desde 2018, e que vem crescendo cada vez mais nos últimos anos. Devido a seu tempo de existência, o grupo já criou uma identidade visual própria e muitas coisas ocorrem nele. Sendo assim, a equipe de administradores do grupo têm a vontade de criar um site para divulgá-lo e criar uma comunidade para os membros, bem como automatizar algumas das atividades que os administradores são responsáveis. Um administrador é chamado no grupo de “adm” dentro do grupo, e um desenhista comum, que não tem é adm, é chamado de “membro”, o usuário comum do sistema.
 
 
-# Técnologias Utlizadas
+# Tecnologias Utlizadas
 
 - HTML 5
 - CSS 3
+- JavaScript 
 - SQL 15
-- Banco de dados MySQL Workbench 8
 - Banco de dados PostgreSQL 13
 - Servidor XAMPP 8.2.0
 - Servidor Insomnia 7.5
@@ -34,13 +34,16 @@ O projeto trata-se de um site para o grupo de desenhistas do whatsapp Por Toda P
         - imagens
         - padroes-adotados
         - requisitos
-        
-    - sistema
-        - codigo
-            - controladores
-            - cersistência
-            - rotas
-            - serviços
+
+    - front-end
         - css
         - html
+        - icons-font-awesome
         - imagens
+
+    - back-end
+        - controllers
+        - node_modules
+        - persistence
+        - routes
+        - services
