@@ -35,14 +35,14 @@ async function getCasa(nome){
     }
 }
 
-async function createCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes){
+async function createCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes, brasao){
 
     const conn = await BD.conectar(); 
 
     try{
         const consulta = 
-        await conn.query("INSERT INTO casaartistica (nome, animal, pedra, cor, flor, ouros, pratas, bronzes) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) returning *", 
-        [nome, animal, pedra, cor, flor, ouros, pratas, bronzes]) 
+        await conn.query("INSERT INTO casaartistica (nome, animal, pedra, cor, flor, ouros, pratas, bronzes, brasao) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning *", 
+        [nome, animal, pedra, cor, flor, ouros, pratas, bronzes, brasao]) 
         console.log("Inserindo...  /n" + consulta.rows)
         return consulta.rows
     }

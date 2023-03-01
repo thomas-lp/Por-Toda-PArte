@@ -37,14 +37,14 @@ async function getDesenho(iddesenho, desenhistaresp){
     }
 }
 
-async function createDesenho(iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad){
+async function createDesenho(iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad, nomedesenho){
 
     const conn = await BD.conectar(); 
 
     try{
         const consulta = 
-        await conn.query("INSERT INTO desenho (iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad) VALUES ($1, $2, $3, $4, $5, $6) returning *", 
-        [iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad]) 
+        await conn.query("INSERT INTO desenho (iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad, nomedesenho) VALUES ($1, $2, $3, $4, $5, $6, $7) returning *", 
+        [iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad, nomedesenho]) 
         console.log("Inserindo...  /n" + consulta.rows)
         return consulta.rows
     }

@@ -24,12 +24,13 @@ async function createCasa(req, res){
     const ouros = parseInt(req.body.ouros)
     const pratas = parseInt(req.body.pratas)
     const bronzes = parseInt(req.body.bronzes)
+    const brasao = req.file.filename 
 
-    if(!nome || !animal || !pedra || !cor || !flor || !ouros || !pratas || !bronzes){ 
+    if(!nome || !animal || !pedra || !cor || !flor || !ouros || !pratas || !bronzes || !brasao){ 
         res.send("Informação inválida foi inserida!!!") 
     }
     else{
-        res.send(await casaService.createCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes))
+        res.send(await casaService.createCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes, brasao))
     }
 }
 
@@ -55,12 +56,13 @@ async function updateCasa(req, res){
     const ouros = parseInt(req.body.ouros)
     const pratas = parseInt(req.body.pratas)
     const bronzes = parseInt(req.body.bronzes)
+    const brasao = req.file.filename
 
     if(!nome){ 
         res.send("Nome inválido!!!") //validação de dados
     }
     else{
-        res.send(await casaService.updateCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes))
+        res.send(await casaService.updateCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes, brasao))
     }
 }
 

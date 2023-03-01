@@ -21,12 +21,12 @@ async function getDesenho(iddesenho, desenhistaresp){
     return await desenhoPersistence.getDesenho(iddesenho, desenhistaresp)
 }
 
-async function createDesenho(iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad){
+async function createDesenho(iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad, nomedesenho){
     const Desenho = await getDesenho(iddesenho) //confere se já existe aquele iddesenho na bd
     const Assinatura = await desenhistas.getDesenhista(desenhistaresp)
 
     if(Desenho.length == 0 && Assinatura.lenght != 0){ //Desenho não existe, posso criar 
-        return await desenhoPersistence.createDesenho(iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad)
+        return await desenhoPersistence.createDesenho(iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad, nomedesenho)
     }
     else{
         return "Id do desenho já cadastrado ou desenhista não existente."

@@ -7,11 +7,11 @@ async function getCasa(nome){
     return await casaPersistence.getCasa(nome)
 }
 
-async function createCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes){
+async function createCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes, brasao){
     const Casa = await getCasa(nome) 
 
     if(Casa.length == 0){  
-        return await casaPersistence.createCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes)
+        return await casaPersistence.createCasa(nome, animal, pedra, cor, flor, ouros, pratas, bronzes, brasao)
     }
     else{
         return "Nome de Casa Artística já cadastrado."

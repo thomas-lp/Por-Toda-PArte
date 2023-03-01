@@ -36,12 +36,13 @@ async function createDesenho(req, res){
     const estilo = req.body.estilo;
     const eventocad = req.body.eventocad;
     const datapostagem = new Date();
+    const nomedesenho = req.file.filename
 
     if(!iddesenho || !desenhistaresp){ //iddesenho ou desenhista vazio
         res.send("Id do desenho ou desenhista inválido!!!") //validação de dados
     }
     else{
-        res.send(await desenhoService.createDesenho(iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad))
+        res.send(await desenhoService.createDesenho(iddesenho, tipodesenho, estilo, datapostagem, desenhistaresp, eventocad, nomedesenho))
     }
 }
 
