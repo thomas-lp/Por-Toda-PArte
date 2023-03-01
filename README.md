@@ -19,8 +19,8 @@ O projeto trata-se de um site para o grupo de desenhistas do whatsapp Por Toda P
 
 - HTML 5
 - CSS 3
+- JavaScript 
 - SQL 15
-- Banco de dados MySQL Workbench 8
 - Banco de dados PostgreSQL 13
 - Servidor XAMPP 8.2.0
 - Servidor Insomnia 7.5
@@ -34,13 +34,16 @@ O projeto trata-se de um site para o grupo de desenhistas do whatsapp Por Toda P
         - imagens
         - padroes-adotados
         - requisitos
-        
-    - sistema
-        - codigo
-            - controladores
-            - cersistência
-            - rotas
-            - serviços
+
+    - front-end
         - css
         - html
+        - icons-font-awesome
         - imagens
+
+    - back-end
+        - controllers
+        - node_modules
+        - persistence
+        - routes
+        - services
