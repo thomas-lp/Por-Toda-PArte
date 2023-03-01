@@ -1,3 +1,19 @@
+.casas {
+  width: 100%;
+}
+
+.casas h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.casas p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 .mySlides {
   display: none
@@ -5,8 +21,8 @@
 
 /* Slideshow container */
 .slideshow-container {
-  width: 700px;
-  height: 400px;
+  width: 370px;
+  height: 370px;
   position: relative;
   margin: auto;
   background-color:aqua;
@@ -14,8 +30,8 @@
 }
 
 .slideshow-container img {
-  max-width: 700px;
-  max-height: 400px;
+  max-width: 370px;
+  max-height: 370px;
   size: cover;
 }
 
@@ -91,9 +107,4 @@
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
 }
