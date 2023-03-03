@@ -52,9 +52,17 @@ O projeto trata-se de um site para o grupo de desenhistas do whatsapp Por Toda P
         
  # Boas práticas para uso do GIT
     - As tags devem ser usadas para para gnorar arquivos desnecessários e manter o controle de versões, economizando armazenamento.
+    
     - Evitar commits bruscos direto na Main, visto que isso pode ocasionar uma perca de código irreversível. Utilizar branchs.
+    
     - Atualizar arquivo ReamdMe a cada alteração.
+    
     - Realizar commits de tempos em tempos, atualizando o sistema periodicamente.
-    - Realize pequenos commits, sempre mantendo a ultima versão mais estável para o commit atual. Ao trabalhar em uma nova tarefa, quebrar as tarefas em subtarefas menores, evitamos que a linha principal de desenvolvimento fique desatualizada por muito tempo, o que evita gerar conflitos.
+    
+    - Realize pequenos commits, sempre mantendo a ultima versão mais estável para o commit atual. 
+    
+    - Quebrar tarefas em subtarefas menores, evitando que a linha principal de desenvolvimento fique desatualizada por muito tempo.
+    
     - As mensagens utilizadas nos commits devem descrever corretamente as alterações feitas e serem diretas. 
+    
     - Utilizar e manter atualizado o quadro kanban, aguardando code review e análise do código.
