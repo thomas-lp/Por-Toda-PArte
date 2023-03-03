@@ -1,11 +1,10 @@
 import desenhistaService from "../services/desenhista.service.js";
 async function getAllDesenhistas(req, res){
     res.send(await desenhistaService.getAllDesenhistas())
-    //função precisa ser chamada com await, pois é async, é necessário esperar a resposta dela para seguir
 }
 
 async function getDesenhista(req, res){
-    const assinatura = req.params.assinatura; //retorna o parâmetro que foi pedido - captura dos dados
+    const assinatura = req.params.assinatura; 
 
     if(!assinatura){ //assinatura vazio
         res.send("Assinatura inválida!!!") //validação de dados
@@ -23,8 +22,8 @@ async function createDesenhista(req, res){
     const senha = parseInt(req.body.senha)
     const casa = req.body.casa
 
-    if(!assinatura || !senha || !casa){ //assinatura vazio
-        res.send("Assinatura, senha ou casa artística inválida!!!") //validação de dados
+    if(!assinatura || !senha || !casa){ 
+        res.send("Assinatura, senha ou casa artística inválida!!!") 
     }
     else{
         res.send(await desenhistaService.createDesenhista(assinatura, nome, redesocial, senha, casa))
@@ -33,10 +32,10 @@ async function createDesenhista(req, res){
 
 async function deleteDesenhista(req, res){
 
-    const assinatura = req.params.assinatura; //retorna o parâmetro que foi pedido - captura dos dados
+    const assinatura = req.params.assinatura; 
 
-    if(!assinatura){ //assinatura vazio
-        res.send("Assinatura inválida!!!") //validação de dados
+    if(!assinatura){ 
+        res.send("Assinatura inválida!!!") 
     }
     else{
         res.send(await desenhistaService.deleteDesenhista(assinatura))
@@ -49,8 +48,8 @@ async function updateDesenhista(req, res){
     const nome = req.body.nome;
     const redesocial = req.body.redesocial;
 
-    if(!assinatura){ //assinatura vazio
-        res.send("Assinatura inválida!!!") //validação de dados
+    if(!assinatura){ 
+        res.send("Assinatura inválida!!!") 
     }
     else{
         res.send(await desenhistaService.updateDesenhista(nome, redesocial, assinatura))
@@ -62,8 +61,8 @@ async function loginDesenhista(req, res){
     const assinatura = req.body.assinatura;
     const senha = req.body.senha;
 
-    if(!assinatura || !senha){ //assinatura vazio
-        res.send("Assinatura ou senha inválida!!!") //validação de dados
+    if(!assinatura || !senha){ 
+        res.send("Assinatura ou senha inválida!!!") 
     }
     else{
         res.send(await desenhistaService.loginDesenhista(assinatura, senha))
@@ -72,4 +71,3 @@ async function loginDesenhista(req, res){
 
 
 export default{getAllDesenhistas, getDesenhista, deleteDesenhista, createDesenhista, updateDesenhista, loginDesenhista} 
-//nesse caso tem-se que especificar quais serviços serão exportados
