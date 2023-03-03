@@ -43,7 +43,9 @@ O projeto trata-se de um site para o grupo de desenhistas do whatsapp Por Toda P
 
     - back-end
         - controllers
+        - middlewares
         - node_modules
-        - persistence
+        - Persistence
+        - public/images
         - routes
         - services
