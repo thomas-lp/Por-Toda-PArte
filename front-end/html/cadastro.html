@@ -15,18 +15,22 @@
 <body class="background">
     <div class="login-box">
         <h2>Cadastro</h2>
-        <form>
+        <form action="https://localhost:3001/desenhista" method="POST">
         <div class="user-box">
             <label>Nome</label>
-            <input type="text" name="" required="">
+            <input type="text" id="nome" name="nome" required="" >
         </div>
         <div class="user-box">
             <label>Login</label>
-            <input type="text" name="" required="">
+            <input type="text" id="assinatura" name="assinatura" required="">
         </div>
         <div class="user-box">
             <label>Senha</label>
-            <input type="password" name="" required="">
+            <input type="password" id="senha" name="senha" required="">
+        </div>
+        <div class="user-box">
+            <label>Rede Social</label>
+            <input type="password" id="redesocial" name="redesocial" required="">
         </div>
         <input type="submit" name="" value="Cadastrar">
         <div class="bottom-text">

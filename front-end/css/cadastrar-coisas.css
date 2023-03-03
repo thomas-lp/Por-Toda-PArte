@@ -1,12 +1,12 @@
   .cadastro-box {
     width: 450px;
-    height: 500px;
+    max-width: 1200px;
+    max-height: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
     background-color: #000;
     color: #fff;
-    top: 50%;
-    left: 53%;
-    position: absolute;
-    transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 70px 30px;
     border-radius: 20px;

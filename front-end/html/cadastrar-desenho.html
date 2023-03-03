@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="stylesheet" href="../css/background.css">
     <link rel="stylesheet" href="../css/esqueleto.css">
-    <link rel="stylesheet" href="../css/cadastrar-desenho.css">
+    <link rel="stylesheet" href="../css/cadastrar-coisas.css">
 </head>
 
 <body class="background">
@@ -43,18 +43,18 @@
             <div class="content">
                 <div class="cadastro-box">
                     <h2>Cadastro de Desenho</h2>
-                    <form action="#">
+                    <form action="https://localhost:3001/desenho" method="POST">
                       <div class="form-box">
                         <label>Descrição do desenho</label>
-                        <input type="text" name="descricao" required="">
+                        <input type="text" id="descricao" name="descricao" required="">
                       </div>
                       <div class="form-box">
                         <label>Tipo do desenho</label>
-                        <input type="text" name="tipo" required="">
+                        <input type="text" id="tipodesenho" name="tipodesenho" required="">
                       </div>
                       <div class="form-box">
                         <label>Arquivo do desenho</label>
-                        <input type="file" name="desenho" required="">
+                        <input type="file" id="foto" name="foto" required="">
                       </div>
                       <input type="submit" value="Cadastrar">
                     </form>
