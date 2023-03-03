@@ -1,4 +1,4 @@
-#Detalhes de boas práticas de codificação:
+# Detalhes de boas práticas de codificação:
 
 - Realizar comentários apenas se necessário, curtos e diretos. Evitar comentários inúteis que poluem o código.
 - Nomes de variáveis, métodos, classes e tabelas no banco de dados, devem ser indicativos, claros e legíveis.
