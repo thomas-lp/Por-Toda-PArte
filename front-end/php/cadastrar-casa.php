@@ -1,3 +1,30 @@
+<?php
+    if(isset($_POST['submit']) && isset($_FILES['brasao'])){
+        include_once('conexao.php');
+
+        $nome = $_POST['nome'];
+        $animal = $_POST['animal'];
+        $pedra = $_POST['pedra'];
+        $flor = $_POST['flor'];
+        $cor = $_POST['cor'];
+        $brasao = $_FILES['brasao'];
+
+        $pasta = "../arquivos/brasoes-casas/";
+        $nomeArquivo = $brasao['name'];
+        $novoNomeArquivo = uniqid();
+        $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+        $caminho = $pasta . $novoNomeArquivo . '.' . $extensao;
+        $salvarBrasao = $novoNomeArquivo . '.' . $extensao;
+
+        $deuCerto = move_uploaded_file($brasao['tmp_name'], $caminho);
+
+        $resultado = mysqli_query($conexao, "INSERT INTO casaartistica (nome, animal, pedra, flor, cor, ouro, prata, bronze, brasao)
+                                             VALUES ('$nome', '$animal', '$pedra', '$flor', '$cor', 0, 0, 0, '$salvarBrasao')");
+
+        header('Location: cadastrar-casa.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,7 +50,7 @@
                 </div>
                 <ul class="menu">
                 <li><a href="#"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
-                <li><a href="minha-galeria.html"><i class="fa-solid fa-image"></i> Galeria</a></li>
+                <li><a href="minha-galeria.php"><i class="fa-solid fa-image"></i> Galeria</a></li>
                 </ul>
             </div>
         </div>
@@ -33,17 +60,17 @@
                 <h1><i class="fa-solid fa-palette"></i> Por Toda Parte</h1>
                 </div>
                 <ul class="menu">
-                    <li><a href="inicio.html"><i class="fa-solid fa-paintbrush"></i> Início</a></li>
-                    <li><a href="eventos.html"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
-                    <li><a href="casas-artisticas.html"><i class="fa-solid fa-house-flag"></i> Casas Artísticas</a></li>
+                    <li><a href="inicio.php"><i class="fa-solid fa-paintbrush"></i> Início</a></li>
+                    <li><a href="eventos.php"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
+                    <li><a href="casas-artisticas.php"><i class="fa-solid fa-house-flag"></i> Casas Artísticas</a></li>
                     <li><a href="#"><i class="fa-solid fa-paint-roller"></i> Comunidade</a></li>
-                    <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                    <li><a href="login.php"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
                 </ul>
             </div>
             <div class="content">
                 <div class="cadastro-box">
                     <h2>Cadastro de Casas</h2>
-                    <form action="https://localhost:3001/casaartistica" method="POST">
+                    <form enctype="multipart/form-data" action="cadastrar-casa.php" method="POST">
                       <div class="form-box">
                         <label>Nome da casa</label>
                         <input type="text" id="nome" name="nome" required="">
@@ -61,10 +88,14 @@
                         <input type="text" id="flor" name="flor" required="">
                       </div>
                       <div class="form-box">
+                        <label>Cor</label>
+                        <input type="text" id="cor" name="cor" required="">
+                      </div>
+                      <div class="form-box">
                         <label>Brasão da casa</label>
                         <input type="file" id="brasao" name="brasao" required="">
                       </div>
-                      <input type="submit" value="Cadastrar">
+                      <input type="submit" name="submit" value="Cadastrar">
                     </form>
                 </div>
             </div>

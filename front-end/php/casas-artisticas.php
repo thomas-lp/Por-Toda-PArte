@@ -1,3 +1,21 @@
+<?php
+    session_start();
+    include_once('conexao.php');
+
+    // print_r($_SESSION);
+    
+    if((!isset($_SESSION['assinatura']) == true) and (!isset($_SESSION['senha']) == true))
+    {
+        unset($_SESSION['assinatura']);
+        unset($_SESSION['senha']);
+        header('Location: login.php');
+    }
+    $logado = $_SESSION['assinatura'];
+    
+    $sql = "SELECT * FROM casaartistica ORDER BY nome";
+    $result = $conexao->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,8 +30,6 @@
     <link rel="stylesheet" href="../css/background.css">
     <link rel="stylesheet" href="../css/esqueleto.css">
     <link rel="stylesheet" href="../css/casas-artisticas.css">
-
-    <script src="../java-script/casas-artisticas.js"></script>
 </head>
 
 <body class="background">
@@ -25,7 +41,7 @@
                 </div>
                 <ul class="menu">
                 <li><a href="#"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
-                <li><a href="minha-galeria.html"><i class="fa-solid fa-image"></i> Galeria</a></li>
+                <li><a href="minha-galeria.php"><i class="fa-solid fa-image"></i> Galeria</a></li>
                 </ul>
             </div>
         </div>
@@ -35,11 +51,11 @@
                 <h1><i class="fa-solid fa-palette"></i> Por Toda Parte</h1>
                 </div>
                 <ul class="menu">
-                    <li><a href="inicio.html"><i class="fa-solid fa-paintbrush"></i> Início</a></li>
-                    <li><a href="eventos.html"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
-                    <li><a href="casas-artisticas.html"><i class="fa-solid fa-house-flag"></i> Casas Artísticas</a></li>
+                    <li><a href="inicio.php"><i class="fa-solid fa-paintbrush"></i> Início</a></li>
+                    <li><a href="eventos.php"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
+                    <li><a href="casas-artisticas.php"><i class="fa-solid fa-house-flag"></i> Casas Artísticas</a></li>
                     <li><a href="#"><i class="fa-solid fa-paint-roller"></i> Comunidade</a></li>
-                    <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                    <li><a href="login.php"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
                 </ul>
             </div>
             <div class="content">
@@ -47,38 +63,40 @@
                   <h2>Casas Artísticas do Por Toda Parte</h2>
                   <p>Aqui estão listados as casas artísticas do grupo (equipes). Clique em na logo da casa para
                       consultar mais detalhes sobre ela.</p>
+
                   <div class="slideshow-container">
-                      <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <a href="#"><img src="https://picsum.photos/id/238/200/200" style="width:100%"></a>
-                        <div class="text">Nome da casa 1</div>
-                      </div>
-                      
-                      <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <a href="#"><img src="https://picsum.photos/id/239/200/200" style="width:100%"></a>
-                        <div class="text">Nome da casa 2</div>
-                      </div>
-                      
-                      <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <a href="#"><img src="https://picsum.photos/id/240/200/200" style="width:100%"></a>
-                        <div class="text">Nome da casa 3</div>
-                      </div>
-                      
+                      <?php
+                        $cont = 1;
+                        while($casa = mysqli_fetch_assoc($result)) {
+                            echo "<div class='mySlides fade'>";
+                            //echo "<div class='numbertext'>1 / 3</div>";
+                            echo "<a href='consultar-casa.php?nome=".$casa['nome']."'>
+                                 <img src='../arquivos/brasoes-casas/".$casa['brasao']."' style='width:100%'></a>";
+                            echo "<div class='text'>".$casa['nome']."</div>";
+                            echo "</div>";
+                            
+                            $cont++;
+                        }
+                      ?>
+
                       <a class="prev" onclick="plusSlides(-1)">❮</a>
-                      <a class="next" onclick="plusSlides(1)">❯</a>
-                      
-                      </div>
-                      <br>
+                      <a class="next" onclick="plusSlides(1)">❯</a>    
+                  </div>
+                    
+                  <br>
                 
-                      <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span> 
-                        <span class="dot" onclick="currentSlide(2)"></span> 
-                        <span class="dot" onclick="currentSlide(3)"></span> 
-                      </div>     
-                    </div>                     
-              </div>
+                  <div style="text-align:center">
+                        <?php
+                            $cont2 = 1;
+                            while($cont2 < $cont){
+                                echo "<span class='dot' onclick='currentSlide(".$cont.")'></span>";
+                                $cont2++;
+                            }
+                        ?>
+                  </div>     
+                </div>                     
+            </div>
+
             <div class="footer">
                 <p>&copy; 2023 - Por Toda PArte</p>
             </div>

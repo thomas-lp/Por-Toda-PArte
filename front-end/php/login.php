@@ -9,33 +9,24 @@
 
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="../css/background.css"> 
-    <link rel="stylesheet" href="../css/cadastro.css"> 
+    <link rel="stylesheet" href="../css/login.css"> 
 </head>
 
 <body class="background">
     <div class="login-box">
-        <h2>Cadastro</h2>
-        <form action="https://localhost:3001/desenhista" method="POST">
+        <h2>Login</h2>
+        <form action="validarLogin.php" method="POST">
         <div class="user-box">
-            <label>Nome</label>
-            <input type="text" id="nome" name="nome" required="" >
-        </div>
-        <div class="user-box">
-            <label>Login</label>
+            <label>Assinatura</label>
             <input type="text" id="assinatura" name="assinatura" required="">
         </div>
         <div class="user-box">
             <label>Senha</label>
             <input type="password" id="senha" name="senha" required="">
         </div>
-        <div class="user-box">
-            <label>Rede Social</label>
-            <input type="password" id="redesocial" name="redesocial" required="">
-        </div>
-        <input type="submit" name="" value="Cadastrar">
-        <div class="bottom-text">
-            Ja possui cadastro? <a href="login.html">Ir para Login</a>
-        </div>
+        <a href="#">Esqueceu sua senha?</a>
+        <a href="inicio.php"><input type="submit" name="submit" value="Entrar"></a>
+        <a href="cadastro.php">Criar Conta</a>
         </form>
     </div>
 </body>

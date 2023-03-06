@@ -27,12 +27,18 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    width: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-bottom: 100px;
 }
 .timeline-event {
-    flex-basis: 23%;
-    margin: 10px;
-    padding: 10px;
+    height: 200px;
+    flex-basis: 40%;
+    margin: 30px;
+    padding: 40px;
+    padding-left: 70px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);

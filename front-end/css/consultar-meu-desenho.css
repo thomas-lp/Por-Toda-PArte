@@ -31,12 +31,8 @@ body {
   }
   
   .description-container p {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: justify;
-  }
-
-  .description-container h2 {
-    margin-bottom: 20px;
   }
   
   .type {
@@ -67,7 +63,13 @@ body {
     color: #ffffff;
     border-radius: 50px;
   }
-  
+
+  .edit-button a,
+  .delete-button a {
+    text-decoration: none;
+    color: #fff;
+  }
+
   .edit-button:hover,
   .delete-button:hover {
     background-color: #333;

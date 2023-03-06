@@ -29,6 +29,11 @@
     cursor: pointer;
     margin-left: 10px;
   }
+
+  .add-drawing a {
+    text-decoration: none;
+    color: #fff;
+  }
   
   .gallery-images {
     display: flex;

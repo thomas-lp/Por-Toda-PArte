@@ -1,3 +1,31 @@
+<?php
+    if(isset($_POST['submit'])){
+        /*print_r('<br>');
+        print_r('Nome:' . $_POST['nome']);
+        print_r('<br>');
+        print_r('Categoria:' . $_POST['categoria']);
+        print_r('<br>');
+        print_r('Ano:' . $_POST['ano']);
+        print_r('<br>');
+        print_r('Descrição Social:' . $_POST['descricao']);
+        print_r('<br>');
+        print_r('Data Social:' . $_POST['data']);*/
+
+        include_once('conexao.php');
+
+        $nome = $_POST['nome'];
+        $descricao = $_POST['descricao'];
+        $data = $_POST['data'];
+        $categoria = $_POST['categoria'];
+        $ano = $_POST['ano'];
+
+        $resultado = mysqli_query($conexao, "INSERT INTO evento (nome, categoria, ano, data, descricao)
+                                            VALUES ('$nome', '$categoria', '$ano', '$data', '$descricao')");
+
+        header('Location: administracao-eventos.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -33,17 +61,17 @@
                 <h1><i class="fa-solid fa-palette"></i> Por Toda Parte</h1>
                 </div>
                 <ul class="menu">
-                    <li><a href="inicio.html"><i class="fa-solid fa-paintbrush"></i> Início</a></li>
-                    <li><a href="eventos.html"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
-                    <li><a href="casas-artisticas.html"><i class="fa-solid fa-house-flag"></i> Casas Artísticas</a></li>
+                    <li><a href="inicio.php"><i class="fa-solid fa-paintbrush"></i> Início</a></li>
+                    <li><a href="eventos.php"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
+                    <li><a href="casas-artisticas.php"><i class="fa-solid fa-house-flag"></i> Casas Artísticas</a></li>
                     <li><a href="#"><i class="fa-solid fa-paint-roller"></i> Comunidade</a></li>
-                    <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                    <li><a href="login.php"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
                 </ul>
             </div>
             <div class="content">
                 <div class="cadastro-box">
                     <h2>Cadastro de Eventos</h2>
-                    <form action="https://localhost:3001/evento" method="POST">
+                    <form action="cadastrar-evento.php" method="POST">
                       <div class="form-box">
                         <label>Nome do evento</label>
                         <input type="text" id="nome" name="nome" required="">
@@ -64,7 +92,7 @@
                         <label>Ano</label>
                         <input type="text" id="ano" name="ano" required="">
                       </div>
-                      <input type="submit" value="Cadastrar">
+                      <input type="submit" name="submit" value="Cadastrar">
                     </form>
                 </div>
             </div>

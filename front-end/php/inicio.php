@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    include_once('conexao.php');
+
+    // print_r($_SESSION);
+    
+    if((!isset($_SESSION['assinatura']) == true) and (!isset($_SESSION['senha']) == true))
+    {
+        unset($_SESSION['assinatura']);
+        unset($_SESSION['senha']);
+        header('Location: login.php');
+    }
+    $logado = $_SESSION['assinatura'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,7 +26,7 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="stylesheet" href="../css/background.css">
     <link rel="stylesheet" href="../css/esqueleto.css">
-    <link rel="stylesheet" href="../css/consultar-evento.css">
+    <link rel="stylesheet" href="../css/inicio.css">
 </head>
 
 <body class="background">
@@ -23,7 +38,7 @@
                 </div>
                 <ul class="menu">
                 <li><a href="#"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
-                <li><a href="minha-galeria.html"><i class="fa-solid fa-image"></i> Galeria</a></li>
+                <li><a href="minha-galeria.php"><i class="fa-solid fa-image"></i> Galeria</a></li>
                 </ul>
             </div>
         </div>
@@ -33,23 +48,18 @@
                 <h1><i class="fa-solid fa-palette"></i> Por Toda Parte</h1>
                 </div>
                 <ul class="menu">
-                    <li><a href="inicio.html"><i class="fa-solid fa-paintbrush"></i> Início</a></li>
-                    <li><a href="eventos.html"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
-                    <li><a href="casas-artisticas.html"><i class="fa-solid fa-house-flag"></i> Casas Artísticas</a></li>
+                    <li><a href="inicio.php"><i class="fa-solid fa-paintbrush"></i> Início</a></li>
+                    <li><a href="eventos.php"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
+                    <li><a href="casas-artisticas.php"><i class="fa-solid fa-house-flag"></i> Casas Artísticas</a></li>
                     <li><a href="#"><i class="fa-solid fa-paint-roller"></i> Comunidade</a></li>
-                    <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                    <li><a href="login.php"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
                 </ul>
             </div>
             <div class="content">
-                <div class="event-container">
-                    <div class="event-info">
-                      <h2 class="event-name">Nome do Evento</h2>
-                      <p class="event-date">Data do Evento</p>
-                      <p class="event-description">Descrição do Evento</p>
-                      <p class="event-category">Categoria do Evento</p>
-                      <p class="event-year">Ano do Evento</p>
-                    </div>
-                </div>                  
+                <div class="inner-content">
+                <h2>Bem-vindo à nossa página principal!</h2>
+                <p>Aqui você encontrará todo o conteúdo do nosso site.</p>
+                </div>
             </div>
             <div class="footer">
                 <p>&copy; 2023 - Por Toda PArte</p>
@@ -58,4 +68,3 @@
     </div>
 </body>
 </html>
-  
