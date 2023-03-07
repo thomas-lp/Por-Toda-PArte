@@ -62,10 +62,20 @@ async function loginDesenhista(req, res){
     const senha = req.body.senha;
 
     if(!assinatura || !senha){ 
-        res.send("Assinatura ou senha inválida!!!") 
+        res.send('<script>alert("Assinatura ou senha inválidos!");window.history.back();</script>') 
     }
     else{
-        res.send(await desenhistaService.loginDesenhista(assinatura, senha))
+        const rows = await desenhistaService.loginDesenhista(assinatura, senha);
+        if(rows == "Desenhista não cadastrado."){
+            res.send('<script>alert("Desenhista não cadastrado.");window.history.back();</script>')
+        }
+        else if (rows[0]){
+            //console.log(rows[0].admin, assinatura)
+            res.redirect('/desenhista/')
+        }
+        else{
+            res.send(rows);
+        }
     }
 }
 
