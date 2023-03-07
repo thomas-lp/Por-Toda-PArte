@@ -19,9 +19,9 @@ O projeto trata-se de um site para o grupo de desenhistas do whatsapp Por Toda P
 
 - HTML 5
 - CSS 3
-- JavaScript 
+- PHP 
 - SQL 15
-- Banco de dados PostgreSQL 13
+- Banco de dados MySQL 15
 - Servidor XAMPP 8.2.0
 - Servidor Insomnia 7.5
 
