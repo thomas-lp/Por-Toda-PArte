@@ -51,18 +51,25 @@ O projeto trata-se de um site para o grupo de desenhistas do whatsapp Por Toda P
         - services
         
  # Boas práticas para uso do GIT
-    - As tags devem ser usadas para para gnorar arquivos desnecessários e manter o controle de versões, economizando armazenamento.
-    
-    - Evitar commits bruscos direto na Main, visto que isso pode ocasionar uma perca de código irreversível. Utilizar branchs.
-    
-    - Atualizar arquivo ReamdMe a cada alteração.
-    
-    - Realizar commits de tempos em tempos, atualizando o sistema periodicamente.
-    
-    - Realize pequenos commits, sempre mantendo a ultima versão mais estável para o commit atual. 
-    
-    - Quebrar tarefas em subtarefas menores, evitando que a linha principal de desenvolvimento fique desatualizada por muito tempo.
-    
-    - As mensagens utilizadas nos commits devem descrever corretamente as alterações feitas e serem diretas. 
-    
-    - Utilizar e manter atualizado o quadro kanban, aguardando code review e análise do código.
+- Arquivo ReadMe:
+
+    - O arquivo ReadMe deve ser atualizado a cada alteração.
+
+- Commits:
+    - As mensagens utilizadas nos commits devem descrever corretamente e claramente as alterações feitas. Dessa forma, descrições genéricas como: "Correções", "Uptades" devem ser evitadas. Dê preferência por descrições como: "Correção Delete do Desenho". 
+    - Commits devem ser descritos com verbos no presente.
+    - Realize commits pequenos, a fim de evitar que mudanças muito grandes no sistema sejam implementadas de uma só vez. Commits pequenos facilitam a reversão se necessária.
+    - Sempre mantenha a última versão mais estável para o commit atual.
+
+- Tags:
+    - A nomenclatura das tags devem seguir o seguinte padrão, de acordo com a versão do sistema: v0.0, v1.0, v2.0
+    - As tags devem ser utilizadas para marcar as versões do sistema ao final de cada sprint.
+
+- Branches:
+    - Evite commits bruscos (mudanças maiores no sistema) direto na Main, visto que isso pode ocasionar uma perda de código irreversível. Utilize branches para esses casos.
+    - Para que seja realizado o merge com a branch principal, devem ser revistas todas as alterações feitas e todos os membros da equipe de desenvolvimento devem estar cientes e em concordância com essas mudanças.
+
+- Organização de tarefas:
+    - Divida as tarefas em subtarefas menores, evitando que a linha principal de desenvolvimento fique desatualizada por muito tempo.
+    - Todas as issues devem estar descritas no quadro kanban.
+    - Utilize e mantenha atualizado o quadro kanban, alterando o status da issue a cada etapa de desenvolvimento concluída.
